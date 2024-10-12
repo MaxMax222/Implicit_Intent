@@ -32,14 +32,21 @@ namespace implicit_intent
 
         private void Call_Click(object sender, EventArgs e)
         {
+            var phoneURI = Android.Net.Uri.Parse("tel: YOUR_PHONE_NUMBER");
+            var callInetnt = new Intent(Intent.ActionDial, phoneURI);
+            StartActivity(callInetnt);
         }
 
         private void Email_Click(object sender, EventArgs e)
         {
+
         }
 
         private void Website_Click(object sender, EventArgs e)
         {
+            var uri = Android.Net.Uri.Parse("https://www.youtube.com/");
+            var webIntent = new Intent(Intent.ActionView, uri);
+            StartActivity(webIntent);
         }
 
         private void Sms_Click(object sender, EventArgs e)
